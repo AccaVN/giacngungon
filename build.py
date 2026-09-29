@@ -553,6 +553,7 @@ def page_404(arts):
 
 # ------------------------------------------------------------------ BUILD
 IMG_CREDIT = ""
+IMG_MAX, IMG_Q = 1400, 80   # kích thước tối đa & chất lượng JPEG ảnh bài viết
 BUILD_V = datetime.datetime.now().strftime("%Y%m%d%H%M")
 ARTS = []
 
@@ -569,13 +570,14 @@ def main():
         if not a.get("image") or not src.is_file():
             if a.get("image"): print(f"  ! Thiếu ảnh {src.name} cho bài {a['slug']} → dùng hình minh họa")
             continue
-        # giữ nguyên ảnh gốc chất lượng cao, không nén lại
-        shutil.copy2(src, out / f"{a['slug']}{src.suffix.lower()}")
-        w, h = Image.open(src).size
-        a["img"] = f"/assets/img/bai/{a['slug']}{src.suffix.lower()}"
+        # ảnh trong bài: nén JPEG, tối đa 1400px (IMG_MAX, IMG_Q chỉnh ở đầu file)
+        im = ImageOps.exif_transpose(Image.open(src)).convert("RGB"); im.thumbnail((IMG_MAX, IMG_MAX), Image.LANCZOS)
+        im.save(out / f"{a['slug']}.jpg", quality=IMG_Q, optimize=True, progressive=True)
+        w, h = im.size
+        a["img"] = f"/assets/img/bai/{a['slug']}.jpg"
         # ảnh thẻ bài viết: bản 800px chất lượng cao để trang danh sách tải nhanh (ảnh trong bài vẫn là ảnh gốc)
-        th = ImageOps.exif_transpose(Image.open(src)).convert("RGB"); th.thumbnail((800, 800), Image.LANCZOS)
-        th.save(out / f"{a['slug']}-the.jpg", quality=92, subsampling=0, optimize=True, progressive=True)
+        th = ImageOps.exif_transpose(Image.open(src)).convert("RGB"); th.thumbnail((720, 720), Image.LANCZOS)
+        th.save(out / f"{a['slug']}-the.jpg", quality=78, optimize=True, progressive=True)
         a["img_t"] = f"/assets/img/bai/{a['slug']}-the.jpg"
         a["img_h"] = round(h * 1400 / w)
         n_img += 1
