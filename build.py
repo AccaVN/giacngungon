@@ -301,6 +301,10 @@ def page_home(arts):
          "employee": {"@type": "Physician", "name": SITE["doctor"].replace("Bs. ", "")}}]}
 
     body = f"""
+<section class="banner" aria-label="Làm thế nào để có một giấc ngủ ngon?">
+<img src="/assets/img/banner.jpg" srcset="/assets/img/banner-sm.jpg 960w, /assets/img/banner.jpg 1901w" sizes="100vw" alt="" width="1901" height="877" fetchpriority="high" decoding="async">
+<div class="wrap banner-in"><p class="banner-q"><svg class="banner-mark" viewBox="0 0 64 52" aria-hidden="true"><path d="M0 52V30Q0 8 22 0l4 7Q13 13 13 25h13v27zm38 0V30q0-22 22-30l4 7q-13 6-13 18h13v27z"/></svg>Làm thế nào để có<br>một giấc ngủ ngon?</p></div>
+</section>
 <section class="hero"><div class="wrap hero-in">
 <div class="hero-t"><p class="eyebrow">{icon('moon',16)} giacngungon.org</p>
 <h1>{SITE['tagline']}</h1>
