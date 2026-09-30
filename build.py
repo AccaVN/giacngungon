@@ -333,7 +333,7 @@ def page_home(arts):
 <div class="risks">{risk_html}</div></div></section>
 
 <section class="sec"><div class="wrap doc-sec">
-<div class="doc-card"><div class="doc-ava" aria-hidden="true">{icon('stetho',46)}</div>
+<div class="doc-card"><div class="doc-ava" aria-hidden="true"><img src="/assets/img/logo-icon.png" alt="" width="70" height="70"></div>
 <h3>{SITE['doctor']}</h3><p class="doc-t">{SITE['doctor_title']}</p>
 <ul class="creds">{''.join(f'<li>{icon("shield",16)}{c}</li>' for c in SITE['doctor_creds'])}</ul>
 <a class="btn btn-navy" href="/bac-si/">Xem hồ sơ bác sĩ</a></div>
@@ -486,7 +486,7 @@ def page_quiz(arts):
 
 def page_doctor(arts):
     inner = f"""<section class="sec"><div class="wrap doc-page">
-<div class="doc-card big"><div class="doc-ava" aria-hidden="true">{icon('stetho',56)}</div><h2>{SITE['doctor']}</h2><p class="doc-t">{SITE['doctor_title']}</p>
+<div class="doc-card big"><div class="doc-ava" aria-hidden="true"><img src="/assets/img/logo-icon.png" alt="" width="84" height="84"></div><h2>{SITE['doctor']}</h2><p class="doc-t">{SITE['doctor_title']}</p>
 <ul class="creds">{''.join(f'<li>{icon("shield",16)}{c}</li>' for c in SITE['doctor_creds'])}</ul>
 <a class="btn btn-gold btn-block" href="/lien-he/">{icon('calendar',18)} Đặt lịch khám</a><a class="btn btn-ghost btn-block" href="tel:{SITE['phone_raw']}">{icon('phone',18)} {SITE['phone']}</a></div>
 <div class="prose">
