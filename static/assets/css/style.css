@@ -103,8 +103,10 @@ body.menu-open .hdr{z-index:70}
 .hero h1{color:#fff;font-family:var(--serif);font-size:clamp(32px,4.4vw,52px);font-weight:700;letter-spacing:-.01em;margin-bottom:16px}
 .hero .lead{font-size:18px;color:#d9e4d2;max-width:540px;margin:0 0 26px}
 .hero .eyebrow{color:var(--gold)}
-.hero-search{display:flex;background:#fff;border-radius:999px;padding:6px;max-width:540px;box-shadow:0 10px 30px rgba(0,0,0,.2)}
-.hero-search input{flex:1;border:0;outline:0;font:inherit;padding:0 16px;min-width:0;color:var(--ink)}
+.hero-search{display:flex;background:#fff;border-radius:999px;padding:6px;max-width:540px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.hero-search input{flex:1;border:0;outline:0;font:inherit;padding:0 16px;min-width:0;color:var(--ink);background:transparent;border-radius:999px;-webkit-appearance:none;appearance:none}
+input[type=search]::-webkit-search-decoration,input[type=search]::-webkit-search-cancel-button{-webkit-appearance:none}
+.hero-search .btn{flex:none}
 .hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:var(--r-lg);padding:26px;backdrop-filter:blur(6px)}
 .hero-card h2{color:#fff;font-size:19px;margin-bottom:16px}
 .intents{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -189,7 +191,8 @@ body.menu-open .hdr{z-index:70}
 /* doctor */
 .doc-sec{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:start}
 .doc-card{background:linear-gradient(180deg,var(--lav),#fff);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;text-align:center}
-.doc-ava{width:104px;height:104px;border-radius:50%;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;box-shadow:0 0 0 6px #fff,0 0 0 7px var(--line)}
+.doc-ava{width:104px;height:104px;border-radius:50%;background:#fff;color:var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;box-shadow:0 0 0 6px #fff,0 0 0 7px var(--line)}
+.doc-ava img{width:68px;height:68px;object-fit:contain}
 .doc-card h3,.doc-card h2{font-family:var(--serif);font-size:24px;margin-bottom:4px}
 .doc-t{color:var(--muted);margin:0 0 16px}
 .creds{list-style:none;padding:0;margin:0 0 20px;text-align:left;display:grid;gap:10px}
@@ -388,7 +391,7 @@ body.menu-open .hdr{z-index:70}
   .topbar-r{display:none!important}
 }
 @media (max-width:600px){
-  .wrap{padding:0 16px}
+  .wrap{padding-left:16px;padding-right:16px}
   .sec{padding:44px 0}
   .intents{grid-template-columns:1fr}
   .grid3,.risks{grid-template-columns:1fr}
