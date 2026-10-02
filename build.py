@@ -106,11 +106,17 @@ def esc(s):
 def fmt_date(d):
     return d.strftime("%d/%m/%Y")
 
-def athumb(a, size="md"):
+# kích thước hiển thị gần đúng của ảnh thẻ theo cỡ (để trình duyệt chọn bản ảnh vừa đủ)
+THUMB_SIZES = {"sm": "76px", "md": "(max-width:900px) 92vw, 380px", "lg": "(max-width:900px) 92vw, 600px",
+               "xl": "(max-width:900px) 92vw, 720px"}
+
+def athumb(a, size="md", lazy=True):
     """Ảnh đại diện bài: dùng ảnh thật nếu có, ngược lại dùng hình minh họa theo chuyên mục"""
     if a.get("img"):
+        load = 'loading="lazy"' if lazy else 'fetchpriority="high"'
         return (f'<div class="thumb thumb-{size} has-img" style="--c:{CATEGORIES[a["category"]]["color"]}">'
-                f'<img src="{a["img_t"]}" alt="" loading="lazy" decoding="async"></div>')
+                f'<img src="{a["img_t"]}" srcset="{a["img_s"]} {a["img_s_w"]}w, {a["img_t"]} {a["img_t_w"]}w" '
+                f'sizes="{THUMB_SIZES.get(size, THUMB_SIZES["md"])}" alt="" width="{a["img_t_w"]}" height="{a["img_t_h"]}" {load} decoding="async"></div>')
     return thumb(a["category"], size)
 
 def thumb(cat_key, size="md"):
@@ -156,6 +162,7 @@ def load_articles():
     return arts
 
 # ------------------------------------------------------------------ KHUNG TRANG
+FONTS = "https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Lora:ital,wght@0,600;0,700;1,500&family=Quicksand:wght@500;600&display=swap"
 def head(title, desc, path, jsonld=None, og_type="website", og_img=None):
     url = SITE["domain"] + path
     full = title if title == SITE["name"] else f"{title} | {SITE['name']}"
@@ -183,7 +190,8 @@ def head(title, desc, path, jsonld=None, og_type="website", og_img=None):
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Lora:ital,wght@0,600;0,700;1,500&family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="{FONTS}" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{FONTS}"></noscript>
 <link rel="stylesheet" href="/assets/css/style.css?v={BUILD_V}">
 {ld}
 </head>
@@ -234,7 +242,7 @@ def footer():
     return f"""</main>
 <footer class="ftr"><div class="wrap">
 <div class="ftr-grid">
-<div class="ftr-brand"><a class="logo-foot" href="/" aria-label="{SITE['name']}"><img src="/assets/img/logo-full-white.png" alt="Giấc ngủ ngon" width="150" height="121"></a>
+<div class="ftr-brand"><a class="logo-foot" href="/" aria-label="{SITE['name']}"><img src="/assets/img/logo-full-white.png" alt="Giấc ngủ ngon" width="150" height="121" loading="lazy" decoding="async"></a>
 <p>Kiến thức giấc ngủ dễ hiểu, dựa trên bằng chứng – và phòng khám giúp bạn lấy lại những đêm ngon giấc.</p>
 <div class="ftr-contact"><a href="tel:{SITE['phone_raw']}">{icon('phone',16)} {SITE['phone']}</a><a href="{SITE['zalo']}" target="_blank" rel="noopener">{icon('chat',16)} Zalo</a>{fb}</div></div>
 <div><h4>Chuyên mục</h4><ul>{cats}</ul></div>
@@ -249,9 +257,9 @@ def footer():
 <script src="/assets/js/main.js?v={BUILD_V}"></script>
 </body></html>"""
 
-def card(a, size="md"):
+def card(a, size="md", lazy=True):
     c = CATEGORIES[a["category"]]
-    return (f'<article class="card"><a href="/{a["slug"]}/" class="card-a">{athumb(a, size)}'
+    return (f'<article class="card"><a href="/{a["slug"]}/" class="card-a">{athumb(a, size, lazy)}'
             f'<div class="card-b"><span class="tag" style="--c:{c["color"]}">{c["name"]}</span>'
             f'<h3>{esc(a["title"])}</h3><p>{esc(a["description"])}</p>'
             f'<span class="meta">{a["minutes"]} phút đọc</span></div></a></article>')
@@ -312,7 +320,7 @@ def page_home(arts):
 
     body = f"""
 <section class="banner" aria-label="Làm thế nào để có một giấc ngủ ngon?">
-<img src="/assets/img/banner.jpg" srcset="/assets/img/banner-sm.jpg 960w, /assets/img/banner.jpg 1901w" sizes="100vw" alt="" width="1901" height="877" fetchpriority="high" decoding="async">
+<img src="/assets/img/banner.webp" srcset="/assets/img/banner-sm.webp 960w, /assets/img/banner.webp 1901w" sizes="100vw" alt="" width="1901" height="877" fetchpriority="high" decoding="async">
 <div class="wrap banner-in"><p class="banner-q"><svg class="banner-mark" viewBox="0 0 64 52" aria-hidden="true"><path d="M0 52V30Q0 8 22 0l4 7Q13 13 13 25h13v27zm38 0V30q0-22 22-30l4 7q-13 6-13 18h13v27z"/></svg>Làm thế nào để có<br>một giấc ngủ ngon?</p></div>
 </section>
 <section class="hero"><div class="wrap hero-in">
@@ -393,7 +401,9 @@ def page_article(a, arts):
               {"@type": "ListItem", "position": 1, "name": "Trang chủ", "item": SITE["domain"] + "/"},
               {"@type": "ListItem", "position": 2, "name": c["name"], "item": f"{SITE['domain']}/chuyen-muc/{a['category']}/"},
               {"@type": "ListItem", "position": 3, "name": a["title"]}]}}
-    fig = f'<figure class="art-img"><img src="{a["img"]}" alt="{esc(a.get("image_alt") or a["title"])}" width="1400" height="{a["img_h"]}"></figure>' if a.get("img") else ""
+    fig = (f'<figure class="art-img"><img src="{a["img_w"]}" srcset="{a["img_t"]} {a["img_t_w"]}w, {a["img_w"]} {a["img_w_w"]}w" '
+           f'sizes="(max-width:900px) 92vw, 820px" alt="{esc(a.get("image_alt") or a["title"])}" width="{a["img_w_w"]}" height="{a["img_w_h"]}" '
+           f'fetchpriority="high" decoding="async"></figure>') if a.get("img") else ""
     if a.get("img"):
         ld["image"] = SITE["domain"] + a["img"]
     if a["reviewed"]:
@@ -432,14 +442,14 @@ def page_category(k, arts):
     body = f"""
 <div class="cat-hero" style="--c:{c['color']}"><div class="wrap"><nav class="crumbs"><a href="/">Trang chủ</a><span>›</span><a href="/blog/">Bài viết</a></nav>
 <div class="cat-hero-in"><div class="cat-ic">{icon(c['icon'],40)}</div><div><h1>{c['name']}</h1><p class="dek">{c['desc']}</p><span class="meta light">{len(lst)} bài viết</span></div></div></div></div>
-<section class="sec"><div class="wrap"><div class="grid3">{''.join(card(a) for a in lst)}</div>
+<section class="sec"><div class="wrap"><div class="grid3">{''.join(card(a, lazy=i >= 3) for i, a in enumerate(lst))}</div>
 <div class="chips-row"><span>Chủ đề khác:</span>{others}</div></div></section>{cta_band(k)}"""
     return head(c["name"], c["desc"], f"/chuyen-muc/{k}/") + header(arts) + body + footer()
 
 def page_blog(arts):
     chips = '<button class="chip on" data-f="all">Tất cả</button>' + "".join(
         f'<button class="chip" data-f="{k}" style="--c:{c["color"]}">{c["name"]}</button>' for k, c in CATEGORIES.items())
-    cards = "".join(f'<div class="bi" data-cat="{a["category"]}" data-s="{esc(strip_accents((a["title"]+" "+a["description"]).lower()))}">{card(a)}</div>' for a in arts)
+    cards = "".join(f'<div class="bi" data-cat="{a["category"]}" data-s="{esc(strip_accents((a["title"]+" "+a["description"]).lower()))}">{card(a, lazy=i >= 3)}</div>' for i, a in enumerate(arts))
     body = f"""
 <div class="cat-hero" style="--c:#4a6441"><div class="wrap"><nav class="crumbs"><a href="/">Trang chủ</a></nav>
 <h1>Thư viện kiến thức giấc ngủ</h1><p class="dek">{len(arts)} bài viết về mất ngủ, rối loạn giấc ngủ, sức khỏe tâm thần và cách ngủ ngon – được biên soạn dễ hiểu, dựa trên các hướng dẫn y khoa.</p></div></div>
@@ -589,11 +599,14 @@ def main():
         im.save(out / f"{a['slug']}.jpg", quality=IMG_Q, optimize=True, progressive=True)
         w, h = im.size
         a["img"] = f"/assets/img/bai/{a['slug']}.jpg"
-        # ảnh thẻ bài viết: bản 800px chất lượng cao để trang danh sách tải nhanh (ảnh trong bài vẫn là ảnh gốc)
-        th = ImageOps.exif_transpose(Image.open(src)).convert("RGB"); th.thumbnail((720, 720), Image.LANCZOS)
-        th.save(out / f"{a['slug']}-the.jpg", quality=78, optimize=True, progressive=True)
-        a["img_t"] = f"/assets/img/bai/{a['slug']}-the.jpg"
-        a["img_h"] = round(h * 1400 / w)
+        # bản WebP (nhẹ hơn JPEG ~30%) dùng để hiển thị; JPEG ở trên giữ cho ảnh chia sẻ Facebook/Zalo
+        im.save(out / f"{a['slug']}.webp", "WEBP", quality=IMG_Q, method=6)
+        a["img_w"], a["img_w_w"], a["img_w_h"] = f"/assets/img/bai/{a['slug']}.webp", w, h
+        # ảnh thẻ bài viết: 720px và 360px (trình duyệt tự chọn bản vừa đủ theo màn hình)
+        for suffix, px, key in (("-the", 720, "img_t"), ("-nho", 360, "img_s")):
+            th = im.copy(); th.thumbnail((px, px), Image.LANCZOS)
+            th.save(out / f"{a['slug']}{suffix}.webp", "WEBP", quality=76, method=6)
+            a[key], a[key + "_w"], a[key + "_h"] = f"/assets/img/bai/{a['slug']}{suffix}.webp", th.size[0], th.size[1]
         n_img += 1
     if n_img:
         IMG_CREDIT = " Một số hình ảnh: Freepik."
@@ -627,6 +640,12 @@ def main():
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     sm += "".join(f"<url><loc>{SITE['domain']}{u}</loc><lastmod>{d}</lastmod></url>\n" for u, d in urls) + "</urlset>\n"
     (DIST / "sitemap.xml").write_text(sm, encoding="utf-8")
+    # bộ nhớ đệm trình duyệt (Cloudflare đọc file _headers): CSS/JS đã có ?v= nên lưu lâu được
+    (DIST / "_headers").write_text(
+        "/assets/css/*\n  Cache-Control: public, max-age=31536000, immutable\n"
+        "/assets/js/*\n  Cache-Control: public, max-age=31536000, immutable\n"
+        "/assets/img/*\n  Cache-Control: public, max-age=2592000\n"
+        "/search.json\n  Cache-Control: public, max-age=3600\n", encoding="utf-8")
     (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE['domain']}/sitemap.xml\n", encoding="utf-8")
     print(f"✔ Đã build {len(ARTS)} bài viết, {len(urls)} URL → {DIST}")
 
