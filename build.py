@@ -54,6 +54,13 @@ CATEGORIES = {
         "name": "Giấc ngủ theo đối tượng", "color": "#b8734e", "icon": "people",
         "desc": "Trẻ em, tuổi dậy thì, phụ nữ mang thai, tiền mãn kinh, người cao tuổi và người làm ca đêm.",
     },
+    "suc-khoe-tam-than": {
+        "name": "Sức khỏe tâm thần", "color": "#7b5e86", "icon": "heart",
+        "desc": "Lo âu, trầm cảm, sang chấn tâm lý, lưỡng cực, ám ảnh cưỡng chế, tâm thần phân liệt… – giải thích bằng lời dễ hiểu để bạn nhận ra vấn đề sớm và biết khi nào cần đi khám.",
+        "cta": ("Bạn thấy mình hoặc người thân trong bài viết này?",
+                "Những vấn đề tâm lý – tâm thần đều có thể điều trị. Gặp bác sĩ chuyên khoa để được lắng nghe, đánh giá đúng và có hướng điều trị phù hợp."),
+        "side": "Khám và tư vấn lo âu, trầm cảm, mất ngủ và các vấn đề tâm lý với",
+    },
 }
 
 ICONS = {
@@ -62,6 +69,7 @@ ICONS = {
     "leaf": '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5.2-6.1"/>',
     "brain": '<path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.9.7 2.5 2.5 0 0 1-2.9-3.4A3 3 0 0 1 3 12a3 3 0 0 1 1.8-2.8A2.5 2.5 0 0 1 7 5.5 2.5 2.5 0 0 1 9.5 2z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.9.7 2.5 2.5 0 0 0 2.9-3.4A3 3 0 0 0 21 12a3 3 0 0 0-1.8-2.8A2.5 2.5 0 0 0 17 5.5 2.5 2.5 0 0 0 14.5 2z"/>',
     "people": '<circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/><path d="M21 21v-2a4 4 0 0 0-3-3.9"/>',
+    "heart": '<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.6 1-1.1a5.5 5.5 0 0 0 0-7.7z"/>',
     "clock": '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
     "check": '<path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/>',
     "phone": '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/>',
@@ -143,7 +151,8 @@ def load_articles():
     dup = {s for s in slugs if slugs.count(s) > 1}
     if dup:
         raise SystemExit(f"Trùng slug: {dup}")
-    arts.sort(key=lambda a: (a["date"], a["slug"]), reverse=True)
+    # cùng ngày: bài có "weight" lớn hơn đứng trước (mặc định 0)
+    arts.sort(key=lambda a: (a["date"], a.get("weight", 0), a["slug"]), reverse=True)
     return arts
 
 # ------------------------------------------------------------------ KHUNG TRANG
@@ -247,9 +256,10 @@ def card(a, size="md"):
             f'<h3>{esc(a["title"])}</h3><p>{esc(a["description"])}</p>'
             f'<span class="meta">{a["minutes"]} phút đọc</span></div></a></article>')
 
-def cta_band():
+def cta_band(cat=None):
+    h, p = CATEGORIES.get(cat, {}).get("cta") or ("Mất ngủ kéo dài hơn 3 tuần?", "Đừng tự chịu đựng. Gặp bác sĩ chuyên khoa để tìm đúng nguyên nhân và có phác đồ phù hợp với bạn.")
     return f"""<section class="cta-band"><div class="wrap cta-in">
-<div><h2>Mất ngủ kéo dài hơn 3 tuần?</h2><p>Đừng tự chịu đựng. Gặp bác sĩ chuyên khoa để tìm đúng nguyên nhân và có phác đồ phù hợp với bạn.</p></div>
+<div><h2>{h}</h2><p>{p}</p></div>
 <div class="cta-btns"><a class="btn btn-gold btn-lg" href="/lien-he/">{icon('calendar',18)} Đặt lịch khám</a>
 <a class="btn btn-ghost-light btn-lg" href="tel:{SITE['phone_raw']}">{icon('phone',18)} {SITE['phone']}</a></div>
 </div></section>"""
@@ -405,12 +415,12 @@ def page_article(a, arts):
 </article>
 <aside class="side">
 <div class="side-box toc"><h2>Trong bài này</h2><ol>{toc}</ol></div>
-<div class="side-box side-cta"><h2>Cần bác sĩ tư vấn?</h2><p>Khám và điều trị mất ngủ, rối loạn giấc ngủ với {SITE['doctor']}.</p>
+<div class="side-box side-cta"><h2>Cần bác sĩ tư vấn?</h2><p>{c.get("side", "Khám và điều trị mất ngủ, rối loạn giấc ngủ với")} {SITE['doctor']}.</p>
 <a class="btn btn-gold btn-block" href="/lien-he/">{icon('calendar',17)} Đặt lịch khám</a><a class="btn btn-ghost btn-block" href="tel:{SITE['phone_raw']}">{icon('phone',17)} {SITE['phone']}</a></div>
 </aside></div>
 <section class="sec sec-soft"><div class="wrap"><div class="sec-h"><h2>Bài viết liên quan</h2><a class="link" href="/chuyen-muc/{a['category']}/">Thêm về {c['name'].lower()} →</a></div>
 <div class="grid3">{''.join(card(x) for x in related)}</div></div></section>
-{cta_band()}
+{cta_band(a['category'])}
 """
     return head(a["title"], a["description"], path, ld, "article", a.get("img")) + header(arts) + body + footer()
 
@@ -423,7 +433,7 @@ def page_category(k, arts):
 <div class="cat-hero" style="--c:{c['color']}"><div class="wrap"><nav class="crumbs"><a href="/">Trang chủ</a><span>›</span><a href="/blog/">Bài viết</a></nav>
 <div class="cat-hero-in"><div class="cat-ic">{icon(c['icon'],40)}</div><div><h1>{c['name']}</h1><p class="dek">{c['desc']}</p><span class="meta light">{len(lst)} bài viết</span></div></div></div></div>
 <section class="sec"><div class="wrap"><div class="grid3">{''.join(card(a) for a in lst)}</div>
-<div class="chips-row"><span>Chủ đề khác:</span>{others}</div></div></section>{cta_band()}"""
+<div class="chips-row"><span>Chủ đề khác:</span>{others}</div></div></section>{cta_band(k)}"""
     return head(c["name"], c["desc"], f"/chuyen-muc/{k}/") + header(arts) + body + footer()
 
 def page_blog(arts):
@@ -432,7 +442,7 @@ def page_blog(arts):
     cards = "".join(f'<div class="bi" data-cat="{a["category"]}" data-s="{esc(strip_accents((a["title"]+" "+a["description"]).lower()))}">{card(a)}</div>' for a in arts)
     body = f"""
 <div class="cat-hero" style="--c:#4a6441"><div class="wrap"><nav class="crumbs"><a href="/">Trang chủ</a></nav>
-<h1>Thư viện kiến thức giấc ngủ</h1><p class="dek">{len(arts)} bài viết về mất ngủ, rối loạn giấc ngủ và cách ngủ ngon – được biên soạn dễ hiểu, dựa trên các hướng dẫn y khoa.</p></div></div>
+<h1>Thư viện kiến thức giấc ngủ</h1><p class="dek">{len(arts)} bài viết về mất ngủ, rối loạn giấc ngủ, sức khỏe tâm thần và cách ngủ ngon – được biên soạn dễ hiểu, dựa trên các hướng dẫn y khoa.</p></div></div>
 <section class="sec"><div class="wrap">
 <div class="filter"><div class="chips">{chips}</div><label class="fsearch">{icon('search',18)}<input id="blogQ" type="search" placeholder="Lọc theo từ khóa…" aria-label="Lọc bài viết"></label></div>
 <div class="grid3" id="blogGrid">{cards}</div><p id="blogEmpty" class="empty" hidden>Không tìm thấy bài phù hợp. Thử từ khóa khác nhé.</p>
@@ -496,7 +506,7 @@ def page_doctor(arts):
 <div class="prose">
 <h2>Phòng khám giúp gì cho bạn?</h2>
 <p>Mất ngủ hiếm khi chỉ là “khó ngủ”. Phía sau có thể là căng thẳng kéo dài, lo âu, trầm cảm, thay đổi nội tiết, đau mạn tính, ngưng thở khi ngủ hay thói quen sinh hoạt chưa phù hợp. Vì vậy, điều trị hiệu quả bắt đầu từ việc <b>tìm đúng nguyên nhân</b>.</p>
-<ul><li>Khám và điều trị mất ngủ cấp tính, mất ngủ mạn tính</li><li>Rối loạn giấc ngủ do lo âu, căng thẳng, trầm cảm</li><li>Mất ngủ ở phụ nữ mang thai, tiền mãn kinh, người cao tuổi</li><li>Tư vấn các rối loạn giấc ngủ khác: ngủ rũ, chân không yên, ác mộng, mộng du…</li><li>Hướng dẫn giảm dần và ngưng thuốc ngủ an toàn khi đã dùng lâu</li></ul>
+<ul><li>Khám và điều trị mất ngủ cấp tính, mất ngủ mạn tính</li><li>Rối loạn giấc ngủ do lo âu, căng thẳng, trầm cảm</li><li>Tư vấn và điều trị các vấn đề sức khỏe tâm thần: <a href="/roi-loan-lo-au/">lo âu</a>, <a href="/roi-loan-tram-cam/">trầm cảm</a>, <a href="/roi-loan-stress-sau-sang-chan/">sang chấn tâm lý</a>, <a href="/roi-loan-luong-cuc/">lưỡng cực</a>, <a href="/roi-loan-am-anh-cuong-che/">ám ảnh cưỡng chế</a>…</li><li>Mất ngủ ở phụ nữ mang thai, tiền mãn kinh, người cao tuổi</li><li>Tư vấn các rối loạn giấc ngủ khác: ngủ rũ, chân không yên, ác mộng, mộng du…</li><li>Hướng dẫn giảm dần và ngưng thuốc ngủ an toàn khi đã dùng lâu</li></ul>
 <h2>Quy trình khám</h2>
 <ol><li><b>Đặt lịch:</b> qua <a href="/lien-he/">form đặt lịch</a>, điện thoại hoặc Zalo {SITE['phone']}.</li>
 <li><b>Khám &amp; tư vấn:</b> bác sĩ hỏi kỹ về giấc ngủ, sức khỏe, tâm lý, thuốc đang dùng; có thể đề nghị bạn ghi <a href="/ve-sinh-giac-ngu/">nhật ký giấc ngủ</a> 1–2 tuần.</li>

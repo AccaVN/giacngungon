@@ -65,9 +65,9 @@ Caffeine làm tăng cảm giác bồn chồn, hồi hộp. Rượu có thể gi�
 
 Hãy tìm sự giúp đỡ nếu bạn có:
 
-- Lo lắng quá mức, khó kiểm soát, kéo dài trên vài tuần.
+- Lo lắng quá mức, khó kiểm soát, kéo dài trên vài tuần (xem: [Rối loạn lo âu](/roi-loan-lo-au/)).
 - Hồi hộp, khó thở, run tay, đau ngực không rõ nguyên nhân.
-- Buồn chán, mất hứng thú, cảm thấy vô vọng.
+- Buồn chán, mất hứng thú, cảm thấy vô vọng (xem: [Rối loạn trầm cảm](/roi-loan-tram-cam/)).
 - Mất ngủ ảnh hưởng đến công việc và các mối quan hệ.
 - Phải dùng rượu hoặc thuốc để “tắt” suy nghĩ.
 

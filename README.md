@@ -6,14 +6,14 @@ Không cần PHP, không cần database, không cần WordPress → nhanh, an to
 ## Cấu trúc gói
 
 ```
-content/*.md     ← 37 bài viết (Markdown) – sửa/thêm bài ở đây
+content/*.md     ← 45 bài viết (Markdown) – sửa/thêm bài ở đây
 content/images/  ← ảnh bài viết (tên file khai báo ở dòng `image:` của bài)
 static/          ← CSS, JS, logo, ảnh chia sẻ
 build.py         ← script sinh ra thư mục dist/ (website hoàn chỉnh) từ content/ + static/
 requirements.txt ← thư viện Python cần cho build
 ```
 
-Trang có sẵn: Trang chủ · 37 bài viết · 5 chuyên mục · Bài viết (lọc + tìm) · Máy tính giờ ngủ ·
+Trang có sẵn: Trang chủ · 45 bài viết · 6 chuyên mục · Bài viết (lọc + tìm) · Máy tính giờ ngủ ·
 Bài kiểm tra giấc ngủ · Bác sĩ · Liên hệ/đặt lịch · Chính sách biên tập · 404 · sitemap.xml · robots.txt.
 Giữ nguyên đường dẫn 9 bài cũ (vd `/dau-hieu-mat-ngu/`, `/chung-ngu-ru/`, `/blog/`, `/lien-he/`) để không mất thứ hạng Google.
 
@@ -58,11 +58,12 @@ Tạo file `content/ten-bai-khong-dau.md` (tên file = đường dẫn bài):
 ```
 ---
 title: "Tiêu đề bài"
-category: mat-ngu          # mat-ngu | roi-loan-giac-ngu | cai-thien-giac-ngu | khoa-hoc-giac-ngu | doi-tuong
+category: mat-ngu          # mat-ngu | roi-loan-giac-ngu | cai-thien-giac-ngu | khoa-hoc-giac-ngu | doi-tuong | suc-khoe-tam-than
 description: "Mô tả 1–2 câu (hiện trên Google và thẻ bài)"
 date: 2026-10-01
 updated: 2026-10-01
 featured: false            # true = hiện ở mục Bài viết nổi bật trang chủ
+weight: 0                  # (tùy chọn) bài cùng ngày: số lớn hơn xếp trước
 reviewed: false            # true = hiện dòng "Tham vấn y khoa: Bs. Nguyễn Thi Phú"
 key:
   - "Ý chính 1"
