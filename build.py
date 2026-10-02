@@ -646,6 +646,47 @@ def main():
         "/assets/js/*\n  Cache-Control: public, max-age=31536000, immutable\n"
         "/assets/img/*\n  Cache-Control: public, max-age=2592000\n"
         "/search.json\n  Cache-Control: public, max-age=3600\n", encoding="utf-8")
+    # cấu hình cho hosting Apache/cPanel (iNET…): HTTPS, trang 404, nén gzip, bộ nhớ đệm, kiểu file WebP
+    (DIST / ".htaccess").write_text("""# Giấc Ngủ Ngon – cấu hình Apache (tự sinh bởi build.py)
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# Chuyển http -> https (chỉ áp dụng cho tên miền thật; địa chỉ tạm của hosting vẫn chạy http)
+RewriteCond %{HTTP_HOST} giacngungon\\.org$ [NC]
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Bỏ www (giacngungon.org là địa chỉ chính)
+RewriteCond %{HTTP_HOST} ^www\\.(giacngungon\\.org)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+# Thêm dấu / cuối cho đường dẫn thư mục bài viết
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.*)$ /$1/ [L,R=301]
+</IfModule>
+
+AddType image/webp .webp
+AddType application/json .json
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript application/json image/svg+xml text/xml application/xml text/plain
+</IfModule>
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType text/html "access plus 0 seconds"
+ExpiresByType text/css "access plus 1 year"
+ExpiresByType application/javascript "access plus 1 year"
+ExpiresByType text/javascript "access plus 1 year"
+ExpiresByType image/webp "access plus 30 days"
+ExpiresByType image/jpeg "access plus 30 days"
+ExpiresByType image/png "access plus 30 days"
+ExpiresByType application/json "access plus 1 hour"
+</IfModule>
+""", encoding="utf-8")
     (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE['domain']}/sitemap.xml\n", encoding="utf-8")
     print(f"✔ Đã build {len(ARTS)} bài viết, {len(urls)} URL → {DIST}")
 
