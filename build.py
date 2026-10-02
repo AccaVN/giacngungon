@@ -452,7 +452,7 @@ def page_blog(arts):
     cards = "".join(f'<div class="bi" data-cat="{a["category"]}" data-s="{esc(strip_accents((a["title"]+" "+a["description"]).lower()))}">{card(a, lazy=i >= 3)}</div>' for i, a in enumerate(arts))
     body = f"""
 <div class="cat-hero" style="--c:#4a6441"><div class="wrap"><nav class="crumbs"><a href="/">Trang chủ</a></nav>
-<h1>Thư viện kiến thức giấc ngủ</h1><p class="dek">{len(arts)} bài viết về mất ngủ, rối loạn giấc ngủ, sức khỏe tâm thần và cách ngủ ngon – được biên soạn dễ hiểu, dựa trên các hướng dẫn y khoa.</p></div></div>
+<h1>Thư viện kiến thức giấc ngủ</h1></div></div>
 <section class="sec"><div class="wrap">
 <div class="filter"><div class="chips">{chips}</div><label class="fsearch">{icon('search',18)}<input id="blogQ" type="search" placeholder="Lọc theo từ khóa…" aria-label="Lọc bài viết"></label></div>
 <div class="grid3" id="blogGrid">{cards}</div><p id="blogEmpty" class="empty" hidden>Không tìm thấy bài phù hợp. Thử từ khóa khác nhé.</p>
