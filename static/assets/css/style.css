@@ -65,7 +65,7 @@ body.menu-open .hdr{z-index:70}
 .nav-item{position:relative}
 .has-mega{position:static}
 .mega{position:absolute;left:0;right:0;top:100%;background:#fff;border-top:1px solid var(--line);box-shadow:0 24px 40px rgba(39,58,36,.12);opacity:0;visibility:hidden;transform:translateY(-6px);transition:.18s}
-.mega-in{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;padding-top:26px;padding-bottom:28px}
+.mega-in{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;padding-top:26px;padding-bottom:28px}
 .has-mega.open .mega,.has-drop.open .drop{opacity:1;visibility:visible;transform:none}
 .mega-h{display:flex;align-items:center;gap:8px;font-weight:700;color:var(--c);margin-bottom:10px;font-size:15px}
 .mega ul{list-style:none;margin:0;padding:0}
