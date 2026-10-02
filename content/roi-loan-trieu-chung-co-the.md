@@ -6,6 +6,7 @@ date: 2026-10-02
 updated: 2026-10-02
 featured: false
 reviewed: true
+image: roi-loan-trieu-chung-co-the.jpg
 weight: 2
 key:
   - "Triệu chứng cơ thể trong nhóm rối loạn này là thật, không phải “giả bệnh” hay “tưởng tượng”."

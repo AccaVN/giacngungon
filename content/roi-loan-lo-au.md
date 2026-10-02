@@ -6,6 +6,7 @@ date: 2026-10-02
 updated: 2026-10-02
 featured: false
 reviewed: true
+image: roi-loan-lo-au.jpg
 weight: 8
 key:
   - "Lo âu là phản ứng bình thường; nó thành bệnh khi quá mức, kéo dài và làm hỏng cuộc sống."

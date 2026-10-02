@@ -6,6 +6,7 @@ date: 2026-10-02
 updated: 2026-10-02
 featured: false
 reviewed: true
+image: roi-loan-stress-sau-sang-chan.jpg
 weight: 6
 key:
   - "Sang chấn là những biến cố khiến ta sợ hãi tột độ: tai nạn, bạo lực, thiên tai, chứng kiến cái chết, mất người thân đột ngột."

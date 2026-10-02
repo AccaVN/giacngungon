@@ -6,6 +6,7 @@ date: 2026-10-02
 updated: 2026-10-02
 featured: false
 reviewed: true
+image: tam-than-phan-liet.jpg
 weight: 5
 key:
   - "Tâm thần phân liệt là bệnh của não, không phải do ma nhập, bùa ngải hay do “yếu bóng vía”."

@@ -6,6 +6,7 @@ date: 2026-10-02
 updated: 2026-10-02
 featured: false
 reviewed: true
+image: roi-loan-luong-cuc.jpg
 weight: 4
 key:
   - "Rối loạn lưỡng cực là bệnh có những giai đoạn hưng phấn bất thường (hưng cảm) xen kẽ với những giai đoạn trầm cảm."

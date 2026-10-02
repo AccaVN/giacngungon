@@ -6,6 +6,7 @@ date: 2026-10-02
 updated: 2026-10-02
 featured: false
 reviewed: true
+image: roi-loan-tram-cam.jpg
 weight: 7
 key:
   - "Trầm cảm khác nỗi buồn thông thường: kéo dài từ 2 tuần trở lên, gần như ngày nào cũng có và làm đảo lộn cuộc sống."
