@@ -5,6 +5,7 @@ description: "Lo liên miên dù chẳng có chuyện gì, tim đập thình th�
 date: 2026-10-02
 updated: 2026-10-02
 featured: false
+reviewed: true
 weight: 8
 key:
   - "Lo âu là phản ứng bình thường; nó thành bệnh khi quá mức, kéo dài và làm hỏng cuộc sống."

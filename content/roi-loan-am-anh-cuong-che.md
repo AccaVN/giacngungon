@@ -5,6 +5,7 @@ description: "Rửa tay hàng chục lần vẫn thấy bẩn, khóa cửa rồi
 date: 2026-10-02
 updated: 2026-10-02
 featured: false
+reviewed: true
 weight: 3
 key:
   - "Ám ảnh là những ý nghĩ, hình ảnh khó chịu cứ bật ra trong đầu dù không muốn; cưỡng chế là những hành động phải làm đi làm lại để bớt lo."

@@ -5,6 +5,7 @@ description: "Đau đầu, đau ngực, chóng mặt, đầy bụng, tê bì… 
 date: 2026-10-02
 updated: 2026-10-02
 featured: false
+reviewed: true
 weight: 2
 key:
   - "Triệu chứng cơ thể trong nhóm rối loạn này là thật, không phải “giả bệnh” hay “tưởng tượng”."

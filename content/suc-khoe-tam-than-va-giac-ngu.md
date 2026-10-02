@@ -5,6 +5,7 @@ description: "Ai cũng có lúc buồn, lúc lo, lúc mất ngủ. Nhưng khi nh
 date: 2026-10-02
 updated: 2026-10-02
 featured: false
+reviewed: true
 weight: 9
 key:
   - "Rối loạn tâm thần rất phổ biến – cứ khoảng 8 người thì có 1 người đang gặp phải – và không có nghĩa là “điên”."

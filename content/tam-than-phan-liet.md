@@ -5,6 +5,7 @@ description: "Nghe tiếng nói không ai nghe thấy, tin chắc có người t
 date: 2026-10-02
 updated: 2026-10-02
 featured: false
+reviewed: true
 weight: 5
 key:
   - "Tâm thần phân liệt là bệnh của não, không phải do ma nhập, bùa ngải hay do “yếu bóng vía”."

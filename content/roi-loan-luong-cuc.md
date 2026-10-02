@@ -5,6 +5,7 @@ description: "Có lúc chỉ ngủ 2–3 tiếng mà vẫn sung sức, nói khô
 date: 2026-10-02
 updated: 2026-10-02
 featured: false
+reviewed: true
 weight: 4
 key:
   - "Rối loạn lưỡng cực là bệnh có những giai đoạn hưng phấn bất thường (hưng cảm) xen kẽ với những giai đoạn trầm cảm."
