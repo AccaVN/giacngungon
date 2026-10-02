@@ -4,6 +4,7 @@ category: doi-tuong
 description: "Người cao tuổi ngủ nông hơn, dễ thức giấc, hay dậy sớm. Đâu là thay đổi bình thường của tuổi tác, đâu là dấu hiệu bệnh lý, và cách giúp ông bà, cha mẹ ngủ ngon hơn."
 date: 2022-04-20
 updated: 2026-09-23
+reviewed: true
 featured: false
 image: nhung-cach-cai-thien-chat-luong-giac-ngu-cho-tuoi-gia.jpg
 key:

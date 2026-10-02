@@ -4,6 +4,7 @@ category: mat-ngu
 description: "Nằm xuống là suy nghĩ ùa về, tim đập nhanh, càng cố ngủ càng tỉnh. Hiểu cơ chế lo âu gây mất ngủ và những cách giúp tâm trí “tắt máy” vào ban đêm."
 date: 2026-07-20
 updated: 2026-09-15
+reviewed: true
 image: mat-ngu-do-lo-au-cang-thang.jpg
 key:
   - "Căng thẳng kích hoạt hệ thần kinh giao cảm và cortisol, khiến cơ thể ở trạng thái “cảnh giác” khó ngủ."

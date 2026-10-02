@@ -4,6 +4,7 @@ category: doi-tuong
 description: "Thanh thiếu niên cần 8–10 tiếng ngủ nhưng đồng hồ sinh học lại khiến các em buồn ngủ muộn. Hiểu đúng để cha mẹ giúp con ngủ đủ, học tốt, cảm xúc ổn định."
 date: 2026-09-05
 updated: 2026-09-26
+reviewed: true
 featured: false
 image: giac-ngu-tuoi-day-thi.jpg
 key:

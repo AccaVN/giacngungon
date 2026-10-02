@@ -4,6 +4,7 @@ category: khoa-hoc-giac-ngu
 description: "Giấc ngủ không phải là “tắt máy”. Trong lúc ngủ, não và cơ thể làm rất nhiều việc: củng cố trí nhớ, dọn dẹp chất thải, sửa chữa mô, điều hòa hormone và miễn dịch."
 date: 2022-04-01
 updated: 2026-09-16
+reviewed: true
 featured: false
 image: tim-hieu-giac-ngu.jpg
 key:

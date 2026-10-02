@@ -4,6 +4,7 @@ category: mat-ngu
 description: "Căng thẳng, cà phê, điện thoại, giờ giấc thất thường, đau nhức, thay đổi nội tiết… Tìm ra đúng nguyên nhân là bước đầu tiên để ngủ ngon trở lại."
 date: 2026-07-02
 updated: 2026-09-18
+reviewed: true
 featured: false
 image: nguyen-nhan-mat-ngu.jpg
 key:

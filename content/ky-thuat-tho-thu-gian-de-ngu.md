@@ -4,6 +4,7 @@ category: cai-thien-giac-ngu
 description: "Thở 4–7–8, thở bụng, thư giãn cơ tiến triển, quét cơ thể… Những kỹ thuật đơn giản giúp làm dịu hệ thần kinh và dễ đi vào giấc ngủ, có thể tập ngay tối nay."
 date: 2026-07-18
 updated: 2026-09-20
+reviewed: true
 featured: false
 image: ky-thuat-tho-thu-gian-de-ngu.png
 key:

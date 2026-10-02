@@ -4,6 +4,7 @@ category: cai-thien-giac-ngu
 description: "Từ giờ giấc, ánh sáng, nhiệt độ phòng đến bữa tối và kỹ thuật thở – 20 thói quen đã được khoa học chứng minh giúp bạn ngủ nhanh hơn, sâu hơn mỗi đêm."
 date: 2022-04-10
 updated: 2026-09-24
+reviewed: true
 featured: 2
 image: 20-cach-ngu-ngon-va-sau.jpg
 key:

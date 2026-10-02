@@ -4,6 +4,7 @@ category: khoa-hoc-giac-ngu
 description: "Thiếu ngủ không chỉ gây mệt mỏi. Về lâu dài, nó ảnh hưởng đến tim mạch, cân nặng, miễn dịch, trí nhớ, tâm trạng và làm tăng nguy cơ tai nạn."
 date: 2026-06-22
 updated: 2026-09-19
+reviewed: true
 featured: false
 image: tac-hai-thieu-ngu.jpg
 key:

@@ -4,6 +4,7 @@ category: roi-loan-giac-ngu
 description: "Ngủ rũ là rối loạn thần kinh mạn tính gây buồn ngủ dữ dội ban ngày, ngủ gật đột ngột và đôi khi yếu cơ đột ngột khi xúc động. Nhận biết, chẩn đoán và kiểm soát bệnh."
 date: 2022-04-12
 updated: 2026-09-10
+reviewed: true
 image: chung-ngu-ru.jpg
 key:
   - "Ngủ rũ là rối loạn thần kinh mạn tính, không phải do lười biếng hay thiếu ngủ."

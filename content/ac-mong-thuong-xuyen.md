@@ -4,6 +4,7 @@ category: roi-loan-giac-ngu
 description: "Thỉnh thoảng gặp ác mộng là bình thường, nhưng ác mộng lặp đi lặp lại khiến bạn sợ đi ngủ thì cần được quan tâm. Nguyên nhân và các phương pháp giúp giảm ác mộng."
 date: 2026-08-15
 updated: 2026-09-05
+reviewed: true
 image: ac-mong-thuong-xuyen.png
 key:
   - "Ác mộng xảy ra chủ yếu trong giấc ngủ REM, thường ở nửa sau đêm."

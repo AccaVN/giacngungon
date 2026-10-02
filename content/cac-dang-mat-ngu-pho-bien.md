@@ -4,6 +4,7 @@ category: mat-ngu
 description: "Mất ngủ cấp tính, mạn tính, mất ngủ đầu giấc, giữa giấc, cuối giấc, mất ngủ do bệnh lý… Mỗi dạng có nguyên nhân và cách xử trí khác nhau."
 date: 2021-11-20
 updated: 2026-09-22
+reviewed: true
 image: cac-dang-mat-ngu-pho-bien.jpg
 key:
   - "Mất ngủ được phân loại theo thời gian kéo dài (cấp tính, mạn tính) và theo thời điểm khó ngủ trong đêm."

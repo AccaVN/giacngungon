@@ -4,6 +4,7 @@ category: mat-ngu
 description: "Từ thay đổi thói quen, liệu pháp CBT-I đến thuốc – đâu là lựa chọn phù hợp cho bạn? Tổng quan các phương pháp điều trị mất ngủ theo khuyến cáo y khoa."
 date: 2026-07-10
 updated: 2026-09-20
+reviewed: true
 featured: false
 image: dieu-tri-mat-ngu.png
 key:

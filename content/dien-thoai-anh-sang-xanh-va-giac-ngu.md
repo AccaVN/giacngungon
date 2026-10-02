@@ -4,6 +4,7 @@ category: cai-thien-giac-ngu
 description: "Lướt điện thoại trước khi ngủ có hại thế nào? Ánh sáng xanh, chế độ ban đêm có tác dụng thật không? Và cách thiết lập thói quen dùng thiết bị lành mạnh buổi tối."
 date: 2026-07-05
 updated: 2026-09-18
+reviewed: true
 image: dien-thoai-anh-sang-xanh-va-giac-ngu.png
 key:
   - "Ánh sáng (đặc biệt ánh sáng xanh) buổi tối làm chậm tiết melatonin và dịch đồng hồ sinh học muộn hơn."

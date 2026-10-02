@@ -4,6 +4,7 @@ category: khoa-hoc-giac-ngu
 description: "Người trưởng thành cần 7–9 tiếng, trẻ em và thanh thiếu niên cần nhiều hơn. Bảng khuyến nghị thời lượng ngủ theo độ tuổi và cách biết bạn đã ngủ đủ hay chưa."
 date: 2026-06-18
 updated: 2026-09-22
+reviewed: true
 featured: false
 image: can-ngu-bao-nhieu-tieng.jpg
 key:

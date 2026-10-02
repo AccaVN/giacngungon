@@ -4,6 +4,7 @@ category: roi-loan-giac-ngu
 description: "Ngáy to, ngừng thở từng cơn, sáng dậy đau đầu, ban ngày buồn ngủ… Ngưng thở khi ngủ là rối loạn phổ biến nhưng thường bị bỏ sót, làm tăng nguy cơ tăng huyết áp, đột quỵ."
 date: 2026-08-01
 updated: 2026-09-21
+reviewed: true
 featured: false
 image: ngung-tho-khi-ngu.png
 key:

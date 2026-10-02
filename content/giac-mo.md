@@ -4,6 +4,7 @@ category: khoa-hoc-giac-ngu
 description: "Giấc mơ xảy ra khi nào, có ý nghĩa gì, vì sao có người nhớ giấc mơ còn người không? Và khi nào “ngủ hay mơ” là dấu hiệu cần quan tâm?"
 date: 2026-08-25
 updated: 2026-09-12
+reviewed: true
 featured: false
 image: giac-mo.png
 key:

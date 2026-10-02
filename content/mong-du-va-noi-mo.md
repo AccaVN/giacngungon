@@ -4,6 +4,7 @@ category: roi-loan-giac-ngu
 description: "Mộng du, nói mớ thường gặp ở trẻ em và phần lớn lành tính. Nhưng khi nào cần lo, làm sao giữ an toàn cho người mộng du, và có nên đánh thức họ không?"
 date: 2026-08-10
 updated: 2026-09-08
+reviewed: true
 image: mong-du-va-noi-mo.png
 key:
   - "Mộng du xảy ra trong giai đoạn ngủ sâu, thường ở 1/3 đầu đêm; người bệnh thường không nhớ gì."

@@ -4,6 +4,7 @@ category: mat-ngu
 description: "CBT-I là phương pháp điều trị mất ngủ mạn tính được khuyến cáo hàng đầu trên thế giới. Nó gồm những gì, hiệu quả ra sao và bạn có thể bắt đầu thế nào?"
 date: 2026-07-15
 updated: 2026-09-20
+reviewed: true
 featured: false
 image: lieu-phap-nhan-thuc-hanh-vi-cbt-i.png
 key:

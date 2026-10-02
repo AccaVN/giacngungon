@@ -4,6 +4,7 @@ category: cai-thien-giac-ngu
 description: "Vệ sinh giấc ngủ là tập hợp thói quen và điều kiện môi trường giúp ngủ ngon. Hướng dẫn từng bước, kèm mẫu nhật ký giấc ngủ để bạn tự theo dõi."
 date: 2026-06-20
 updated: 2026-09-14
+reviewed: true
 image: ve-sinh-giac-ngu.jpg
 key:
   - "Vệ sinh giấc ngủ gồm giờ giấc, môi trường phòng ngủ, ăn uống, vận động và thói quen trước khi ngủ."

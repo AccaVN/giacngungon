@@ -4,6 +4,7 @@ category: cai-thien-giac-ngu
 description: "Giấc ngủ trưa ngắn giúp tỉnh táo, tăng hiệu suất; ngủ quá dài lại khiến uể oải và mất ngủ buổi tối. Hướng dẫn ngủ trưa khoa học cho người Việt."
 date: 2026-07-08
 updated: 2026-09-12
+reviewed: true
 image: ngu-trua-dung-cach.png
 key:
   - "Ngủ trưa 15–30 phút giúp tăng tỉnh táo mà không gây uể oải."

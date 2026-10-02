@@ -4,6 +4,7 @@ category: cai-thien-giac-ngu
 description: "Sữa ấm, chuối, kiwi, cá béo, các loại hạt… thực phẩm nào thực sự giúp ngủ ngon theo nghiên cứu? Và những món nên tránh trong bữa tối để không mất ngủ."
 date: 2026-06-25
 updated: 2026-09-10
+reviewed: true
 image: thuc-pham-giup-ngu-ngon.png
 key:
   - "Không có “thực phẩm thần kỳ” chữa mất ngủ, nhưng chế độ ăn cân bằng hỗ trợ giấc ngủ tốt hơn."

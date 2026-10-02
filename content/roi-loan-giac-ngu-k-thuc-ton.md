@@ -4,6 +4,7 @@ category: mat-ngu
 description: "Rối loạn giấc ngủ không thực tổn là nhóm rối loạn giấc ngủ không do tổn thương thực thể, thường liên quan đến tâm lý, căng thẳng, thói quen sinh hoạt. Biểu hiện, nguyên nhân và cách điều trị."
 date: 2022-04-15
 updated: 2026-09-16
+reviewed: true
 image: roi-loan-giac-ngu-k-thuc-ton.jpg
 key:
   - "“Không thực tổn” nghĩa là không tìm thấy tổn thương thực thể (não, tim, phổi…) gây ra rối loạn giấc ngủ."

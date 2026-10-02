@@ -4,6 +4,7 @@ category: mat-ngu
 description: "Khó vào giấc, thức giấc giữa đêm, dậy quá sớm, ban ngày mệt mỏi… Những dấu hiệu nào cho thấy bạn đang mất ngủ thực sự và khi nào cần đi khám?"
 date: 2021-11-20
 updated: 2026-09-22
+reviewed: true
 featured: 1
 image: dau-hieu-mat-ngu.jpg
 key:

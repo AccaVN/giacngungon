@@ -4,6 +4,7 @@ category: cai-thien-giac-ngu
 description: "Người Việt yêu cà phê – nhưng ly cà phê sữa đá buổi chiều có thể là thủ phạm khiến bạn trằn trọc lúc nửa đêm. Caffeine ảnh hưởng giấc ngủ ra sao và nên uống thế nào cho hợp lý?"
 date: 2026-06-28
 updated: 2026-09-26
+reviewed: true
 featured: false
 image: caffeine-va-giac-ngu.jpg
 key:

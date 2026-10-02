@@ -4,6 +4,7 @@ category: doi-tuong
 description: "Phần lớn mẹ bầu gặp khó khăn về giấc ngủ. Nguyên nhân thay đổi theo từng tam cá nguyệt; tư thế ngủ, mẹo giảm khó chịu và những dấu hiệu cần báo bác sĩ."
 date: 2026-08-28
 updated: 2026-09-24
+reviewed: true
 featured: 3
 image: mat-ngu-khi-mang-thai.jpg
 key:

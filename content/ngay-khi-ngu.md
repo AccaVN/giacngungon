@@ -4,6 +4,7 @@ category: roi-loan-giac-ngu
 description: "Ngáy rất phổ biến, nhưng đôi khi là dấu hiệu của ngưng thở khi ngủ. Tìm hiểu vì sao bạn ngáy, cách phân biệt ngáy lành tính và nguy hiểm, cùng các mẹo giảm ngáy."
 date: 2026-08-05
 updated: 2026-09-12
+reviewed: true
 image: ngay-khi-ngu.jpg
 key:
   - "Ngáy do luồng khí làm rung các mô mềm ở vùng họng khi đường thở bị hẹp."

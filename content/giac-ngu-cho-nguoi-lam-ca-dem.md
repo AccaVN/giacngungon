@@ -4,6 +4,7 @@ category: doi-tuong
 description: "Công nhân, y bác sĩ, bảo vệ, tài xế… làm việc ban đêm phải ngủ ngược với đồng hồ sinh học. Chiến lược ánh sáng, giờ ngủ, ăn uống giúp giảm mệt mỏi và bảo vệ sức khỏe."
 date: 2026-09-08
 updated: 2026-09-27
+reviewed: true
 featured: false
 image: giac-ngu-cho-nguoi-lam-ca-dem.jpg
 key:

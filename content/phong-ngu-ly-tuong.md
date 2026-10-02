@@ -4,6 +4,7 @@ category: cai-thien-giac-ngu
 description: "Thiết lập phòng ngủ giúp ngủ ngon trong khí hậu nóng ẩm Việt Nam: nhiệt độ điều hòa bao nhiêu là hợp lý, xử lý tiếng ồn, ánh sáng, chọn nệm và gối phù hợp."
 date: 2026-07-12
 updated: 2026-09-15
+reviewed: true
 image: phong-ngu-ly-tuong.png
 key:
   - "Phòng ngủ nên mát, tối, yên tĩnh và thông thoáng."

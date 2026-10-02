@@ -4,6 +4,7 @@ category: roi-loan-giac-ngu
 description: "Nghiến răng khi ngủ có thể gây mòn răng, đau hàm, đau đầu buổi sáng. Tìm hiểu mối liên hệ với căng thẳng, ngưng thở khi ngủ và các cách bảo vệ răng."
 date: 2026-08-12
 updated: 2026-09-06
+reviewed: true
 image: nghien-rang-khi-ngu.png
 key:
   - "Nghiến răng khi ngủ thường liên quan căng thẳng, caffeine, rượu, hút thuốc và rối loạn thở khi ngủ."

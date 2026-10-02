@@ -4,6 +4,7 @@ category: doi-tuong
 description: "Bốc hỏa, đổ mồ hôi đêm, thay đổi tâm trạng khiến nhiều phụ nữ trung niên mất ngủ. Hiểu vai trò của hormone và các giải pháp giúp ngủ ngon hơn trong giai đoạn chuyển tiếp."
 date: 2026-09-01
 updated: 2026-09-25
+reviewed: true
 featured: false
 image: mat-ngu-tien-man-kinh.jpg
 key:

@@ -4,6 +4,7 @@ category: khoa-hoc-giac-ngu
 description: "Nhịp Circadian là đồng hồ sinh học 24 giờ điều khiển giờ ngủ, thân nhiệt, hormone. Hiểu và “đồng bộ” nhịp sinh học giúp bạn ngủ dễ, dậy khỏe."
 date: 2022-04-08
 updated: 2026-09-15
+reviewed: true
 featured: false
 image: lam-quen-voi-nhip-dieu.jpg
 key:

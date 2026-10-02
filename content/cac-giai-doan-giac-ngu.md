@@ -4,6 +4,7 @@ category: khoa-hoc-giac-ngu
 description: "Mỗi đêm, giấc ngủ lặp lại 4–6 chu kỳ khoảng 90 phút, đi qua các giai đoạn N1, N2, N3 và REM. Mỗi giai đoạn có vai trò riêng cho cơ thể và trí não."
 date: 2026-06-15
 updated: 2026-09-14
+reviewed: true
 featured: false
 image: cac-giai-doan-giac-ngu.jpg
 key:

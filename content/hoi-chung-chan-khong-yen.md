@@ -4,6 +4,7 @@ category: roi-loan-giac-ngu
 description: "Cảm giác khó chịu, bứt rứt ở chân khiến bạn phải cử động liên tục, nặng hơn vào buổi tối. Hội chứng chân không yên là gì, liên quan thiếu sắt thế nào và điều trị ra sao?"
 date: 2026-08-08
 updated: 2026-09-10
+reviewed: true
 image: hoi-chung-chan-khong-yen.jpg
 key:
   - "Chân không yên gây cảm giác khó chịu và thôi thúc phải cử động chân, nặng hơn khi nghỉ ngơi và vào buổi tối."

@@ -4,6 +4,7 @@ category: roi-loan-giac-ngu
 description: "Tỉnh dậy nhưng không cử động được, cảm giác có ai đè lên ngực, thậm chí thấy bóng người trong phòng. Bóng đè thực chất là hiện tượng liệt khi ngủ – hoàn toàn có lời giải khoa học."
 date: 2026-08-18
 updated: 2026-09-12
+reviewed: true
 featured: false
 image: bong-de.png
 key:

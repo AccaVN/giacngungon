@@ -4,6 +4,7 @@ category: doi-tuong
 description: "Giấc ngủ đặc biệt quan trọng với sự phát triển trí não và thể chất của trẻ. Các rối loạn giấc ngủ thường gặp ở trẻ, dấu hiệu cảnh báo và cách giúp con ngủ ngon."
 date: 2022-04-18
 updated: 2026-09-23
+reviewed: true
 featured: false
 image: roi-loan-giac-ngu-o-tre-em.jpg
 key:

@@ -4,6 +4,7 @@ category: mat-ngu
 description: "Thuốc ngủ có gây nghiện không? Dùng lâu có hại gì? Vì sao không được tự ngưng đột ngột? Hiểu đúng về thuốc ngủ để dùng an toàn."
 date: 2026-07-25
 updated: 2026-09-18
+reviewed: true
 image: thuoc-ngu-nhung-dieu-can-biet.png
 key:
   - "Thuốc ngủ là thuốc kê đơn, cần bác sĩ chỉ định liều và thời gian dùng."

@@ -4,6 +4,7 @@ category: cai-thien-giac-ngu
 description: "Melatonin là “hormone bóng tối” điều hòa nhịp sinh học. Viên uống melatonin hữu ích cho ai, không phù hợp với ai và cần lưu ý gì?"
 date: 2026-08-20
 updated: 2026-09-25
+reviewed: true
 image: melatonin.png
 key:
   - "Melatonin là tín hiệu thời gian (“trời đã tối”) hơn là thuốc gây ngủ mạnh."
